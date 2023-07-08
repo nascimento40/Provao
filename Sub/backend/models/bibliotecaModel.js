@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const bcryptjs = require('bcryptjs');
 
 const livroSchema = new mongoose.Schema({
   ISBN: {
