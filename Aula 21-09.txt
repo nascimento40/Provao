@@ -1,0 +1,34 @@
+Aula de Data Science 21/09
+import random
+import numpy as np
+
+#Gera duas lista aleatorios de 500 valores entre 1 e 10000
+serieA = random.sample(range(1,10000),500)
+serieB = random.sample(range(1,10000),500)
+
+#converter as listas em vetores de números
+serieA = np.array(serieA)
+serieB = np.array(serieB)
+
+print(type(serieA))
+print(type(serieB))
+
+print(serieA.mean())
+print(serieA.std()) #desvio padrao da serie
+print(serieB.mean())
+print(serieB.std())
+
+import seaborn as sb
+import matplotlib.pyplot as plt
+sb.kdeplot(serieA)
+sb.kdeplot(serieB)
+plt.show()
+
+#Analise de quartis
+min = serieA.min()
+max = serieA.max()
+q1 = np.quantile(serieA,0.25)
+q2 = np.quantile(serieA,0.50)
+q3 = np.quantile(serieA,0.75)
+q4 = np.quantile(serieA,1)
+print(min, q1, q2, q3, q4, max)
